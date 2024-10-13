@@ -1,0 +1,37 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			
+		</style>
+		
+		<script>
+			var time = setInterval(function(){timer()}, 1000)
+			
+			function timer(){
+				var d = new Date()
+				
+				var timer = document.getElementById('timer').innerHTML = d.toLocaleString()
+				
+			}
+			
+			function toggle(btn){
+				if(btn.value == "Pause"){
+					clearInterval(time)
+					btn.value = "Play"
+				}else{
+					time = setInterval(function(){timer()}, 1000)
+					btn.value = "Pause"
+				}
+			}
+		</script>
+	</head>
+		<!--  -->
+	<body>
+		
+		<span style="background: yellow;color: red" id="timer"></span>
+		<input type="button" value="Pause" onclick="toggle(this)">
+		
+	</body>
+</html>

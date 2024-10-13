@@ -1,0 +1,67 @@
+<html>
+ <head >
+ <title>otm</title>
+ <meta charset="utf-8">
+ <link rel="stylesheet"  type="text/css " href="bootstrap.min.css">
+ <style>
+    #container{
+	 width:100%;
+	 height:100%;
+	}
+	ul{
+	 display : none;
+	  width: 200px;
+	  height: 200px;
+	  list-style : none;
+	  margin: 0px;
+	  padding: 0px;
+	  text-align: center;
+	  position: absolute;
+	} 
+	ul li{
+	 background: green;
+	 padding-top: 10px;
+	 color: red;
+	 border-bottom: 3px blue solid;
+	}
+	ul li:hover{
+	 background: pink;
+	 color: black;
+	 cursor: pointer;
+	}
+ 
+ </style>
+  <script>
+  function my_menu(event){
+    event.preventDefault()
+	var menu= document.getElementById("menu")
+	menu.style.display= "block"
+    menu.style.left = event.clientX
+	menu.style.top = event.clientY
+  }
+  function hide(){
+     var menu= document.getElementById("menu")
+	menu.style.display= "none"
+  }
+
+  
+  </script>
+ 
+ </head>
+ 
+ <body  onclick="hide()">
+   
+	<ul id="menu">
+	 <li onclick="w=window.open()">open tab</li>
+	 <li onclick="w.close()">close tab</li>
+	 <li onclick="hide() ; window.print()">print</li>
+	 <li onclick="hide()">exit</li>
+	
+	</ul>
+	 <div id="container"  oncontextmenu="my_menu(event)" ></div>
+   
+ </body>
+
+
+
+</html>

@@ -1,0 +1,42 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			
+		</style>
+		
+		<script>
+			function add_link(){
+				var newLink = document.createElement("a") // <a></a>
+				
+				var text = document.createTextNode("Link 3")
+				newLink.appendChild(text)
+				
+				newLink.innerHTML = "Link 3" // <a>Link 0</a>
+				
+				newLink.href = "#" // <a href="#">Link 0</a>
+				
+				//document.getElementById("d1").appendChild(newLink)
+				var target = document.getElementById("d1").getElementsByTagName("a")[0]
+				document.getElementById("d1").insertBefore(newLink, target)
+			}
+			
+			function remove_link(){
+				var parent = document.getElementById("d1")
+				var child = parent.getElementsByTagName("a")[0]
+				
+				parent.removeChild(child)
+			}
+		</script>
+	</head>
+		
+	<body>
+		<input type="button" value="ADD" onclick="add_link()"><br><br>
+		<input type="button" value="Remove" onclick="remove_link()"><br><br>
+		<div id="d1">
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+		</div>
+	</body>
+</html>

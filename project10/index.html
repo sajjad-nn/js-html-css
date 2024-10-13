@@ -1,0 +1,43 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			
+		</style>
+		<script>
+			var persons = new Array() // ["wef", "wfff"]
+			var i=0;
+			function add_person(){
+				var first_name = document.getElementById("txt1").value
+				var last_name = document.getElementById("txt2").value
+				
+				var prsn = {fname: first_name, lname: last_name}
+				persons[i++] = prsn // ++i i++	
+			}
+			
+			function show_person(){
+				var table = "<table style='align: center;width: 400px'><tr><th>First Name</th><th>Last Name</th></tr>"
+					for(var i =0; i<persons.length;++i){
+						table += "<tr>"
+							table += "<td>" + persons[i].fname +"</td>"
+							table += "<td>" + persons[i].lname +"</td>"
+						table += "</tr>"
+					}
+				table += "</table>"
+					
+				document.getElementById("persons").innerHTML = table
+			}
+		</script>
+	</head>
+		<!--  -->
+	<body>
+		First Name: <input type="text" id="txt1" >
+		Last Name: <input type="text" id="txt2" >
+		
+		<input type="button" value="ADD" onclick="add_person()">
+		<input type="button" value="SHOW" onclick="show_person()"><hr>
+		
+		<div id="persons"></div>
+	</body>
+</html>

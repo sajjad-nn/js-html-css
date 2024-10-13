@@ -1,0 +1,56 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
+		<style>
+			label{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+		
+	<body dir="">
+		<form action="register.php" method="get" enctype="multipart/form-data">
+			Email: <input type="email"><br>
+			<textarea cols="40" rows="10"></textarea><br>
+			
+			<select>
+				<option value="1">HTML</option>
+				<option value="2">XML</option>
+				<option value="3">CSS</option>
+			</select><hr>
+			
+			<input type="file">
+			<hr>
+			<input type="number" min="1" max="10" step="2"><br>
+			<input type="color">
+			<input type="date">
+			<input type="time">
+			<input type="range" value="3" step="1" min="0" max="5">
+			
+			
+			<hr><label for="firstname">First Name: </label>
+			<input type="text" id="firstname" name="fname" placeholder="Enter Name:">
+			<label for="lastname">Last Name: </label>
+			<input type="text" id="lastname" name="lname" required>
+			
+			<input type="button" value="Click Me"><br>
+			
+			languages: 
+			HTML <input type="checkbox" checked>
+			CSS <input type="checkbox">
+			JS <input type="checkbox"><br>
+			
+			Gender:
+			Man: <input type="radio" name="gender" value="man">
+			Woman: <input type="radio" name="gender" value="woman">
+			
+			Password: <input type="password" name="pass"><br>
+			<input type="reset"><br><br>
+			
+			<input type="submit" value="ارسال">
+		</form>
+		
+	</body>
+</html>

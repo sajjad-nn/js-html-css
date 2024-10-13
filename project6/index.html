@@ -1,0 +1,112 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		
+		<script>
+			
+			var names = ["Ahmad", "Reza", "Ali", "Naser", "Zahra" , "Maryam"]
+			function mySearch(name){
+				for(var i = 0;i<names.length;++i){
+					if(names[i] == name){
+						continue
+					}
+				}
+			}
+			//mySearch("Naser")
+			
+			function myObject(){
+				var person1 = {firstname: "Ali", lastname: "Abbasi", age: 23}
+				var text = ""
+				for(var X in person1){
+					text+= person1[X]+" "
+				}
+				document.write(text)
+			}
+			myObject()
+			
+			
+			
+			/*do{
+				var i = 10;
+				alert(i)
+				i+=2
+			}while(n/m)*/
+			
+			/*function f1(){
+				var input = prompt("Enter your Num: (\"*\" to Finish)")
+				var sum = 1
+				
+				while(input != "*"){
+					sum*= eval(input)
+					input = prompt("Enter your Num: ")
+				}
+				alert(sum)
+			}
+			f1()*/
+			
+			
+			
+			/*var min = eval(prompt("Enter MIN: "))
+			var max = eval(prompt("Enter MAX: "))
+			
+			for(var i= min;i<=max;i+=2){
+				document.write(i + "<br>")
+			}
+			
+			var names = ["Ali","Reza","Ahmad","Zahra"];
+			
+			for(var i= 0;i<names.length;++i){
+				document.write(names[i] + "<br>")
+			}
+			
+			var min = eval(prompt("Enter MIN: "))
+			var max = eval(prompt("Enter MAX: "))
+			
+			var i=min;
+			while(i<max){
+				document.write(i + "<br>")
+				i+=2
+			}*/
+			
+			/*var n = "16"
+			var n1 = eval(prompt("Enter Number 1: "))
+			var n2 = eval(prompt("Enter Number 2: "))
+			var operation = prompt("Enter Operation: ")
+			
+			calc(n1, n2, operation)
+			
+			function calc(m1, m2, op){
+				switch(op){
+					case "+": alert(m1+m2);break;
+					case "-": alert(m1-m2);break;
+					case "*": alert(m1*m2);break;
+					case "/": alert(m1/m2);break;
+				}
+			}
+			*/
+			
+			
+			/*if(x>=18 && x<=20){
+				alert("AVG is BEST")
+			}else if(x<18 && x>=15){
+				alert("AVG is GOOD")
+			}else if(x<15 && x>=10){
+				alert("AVG is NOT BAD")
+			}else{
+				alert("AVG is BAD")
+			}
+			
+			switch(x){
+				case "A": alert("AVG is BEST");break;
+				case "B": alert("AVG is GOOD");break
+				case "C": alert("AVG is NOT BAD");break
+				default: alert("AVG is BAD");break
+			}*/
+		</script>
+	</head>
+		<!--  -->
+	<body dir="">
+		
+	</body>
+</html>

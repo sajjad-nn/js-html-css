@@ -1,0 +1,66 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			a:nth-last-child(2){
+				color: red;
+			}
+			p:first-child a{
+				/*color: orange*/
+			}
+			p a:first-child{
+				
+			}
+			a:nth-child(1){
+				/*color: silver;*/
+			}
+			
+			#d1{
+				width: 400px;
+				height: 400px;
+				background: orange;
+			}
+			#d1::first-letter{
+				color: white;
+				font-size: 20pt;
+			}
+			a::before{
+				content: "« "
+			}
+			a::after{
+				content: " »"
+			}
+			ul{
+				list-style: none;
+			}
+			.required::before{
+				content: "* ";
+				color: red;
+			}
+			a[title*=link2]{
+				background: yellow;
+			}
+			
+			
+		</style>
+		
+	</head>
+		<!--  -->
+	<body dir="">
+		
+		 
+		<ul>
+		<li class="required">First Name: <input type="text" ></li>
+		</ul>
+		
+		<div id="d1">
+			Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello Hello 
+		</div>
+		<p>
+			<a href="#" title="link1">Link 1</a><br>
+			<a href="#" title="q3rfqlink2qwrfqw">Link 2</a><br>
+			<a href="#">Link 3</a>
+		</p>
+	</body>
+</html>

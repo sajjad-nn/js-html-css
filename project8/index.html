@@ -1,0 +1,43 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			#d1{
+				width: 300px;
+				height: 300px;
+				background: pink;
+			}
+		</style>
+		<script>
+			var txt = "Hello"
+			var txt2 = " Ali!"
+			var txt3 = " How are you?"
+			txt = txt.concat(txt2, txt3, "***")
+			
+			//alert(txt.lastIndexOf('H', 10))
+			//alert(txt.replace('e', 'a'))
+			
+			//txt = txt.slice(0, 3)
+			var names = "ali, ahmad, reza"
+			//alert(names[0])
+			names = names.split(',')
+			//alert(names[0])
+			//alert(txt.substr(0,4))
+			//alert(txt.toUpperCase())
+			//alert(txt.toLowerCase())
+			
+			//alert(txt.anchor("top"))
+			//alert(txt.big())
+			alert(txt.strike())
+		</script>
+	</head>
+		<!--  -->
+	<body>
+		<input type="text" placeholder="Enter Message: " id="txt1">
+		<input type="button" value="SEND" id="btn"><br><br>
+		<div id="d1"></div>
+		
+		
+	</body>
+</html>

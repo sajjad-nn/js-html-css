@@ -1,0 +1,34 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<style>
+			img{
+				width: 200px;
+				height: 400px;
+				float: left;
+				margin: 50px;
+			}
+		</style>
+		
+		<script>
+			function toggle(){
+				if(btn.value == "map"){
+					document.getElementById("img1").src = "2.png"
+					btn.value = "bird"
+				}else{
+					document.getElementById("img1").src = "1.png"
+					btn.value = "map"
+				}
+			}
+		</script>
+		
+	</head>
+		
+	<body>
+		<img id="img1" src="1.png"><br><br>
+		
+		<input type="button" id="btn" value="map" onclick="toggle()">
+	</body>
+</html>

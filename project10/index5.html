@@ -1,0 +1,76 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="..\project9\bootstrap\css\bootstrap.min.css">
+		<style>
+			body{
+				margin: 10px;
+			}
+			tr{
+				text-align: center
+			}
+			a{
+				text-decoration: none;
+			}
+		</style>
+		
+		<script>
+			function add_person(){
+				var fname = document.getElementById("txt1").value
+				var lname = document.getElementById("txt2").value
+				
+				var person = document.createElement("tr")
+				var fnCell = document.createElement("td")
+				var lnCell = document.createElement("td")
+				var opCell = document.createElement("td")
+				
+				var editLink = document.createElement("a") // <a></a>
+				editLink.innerHTML = "Upadte"
+				editLink.href = "#"
+				
+				var sep = document.createTextNode(" | ")
+				
+				var delLink = document.createElement("a") // <a></a>
+				delLink.innerHTML = "Delete"
+				delLink.href = "#"
+				delLink.onclick = function(){delPerson(person)} // <a href="#" onclick=""></a>
+				
+				fnCell.innerHTML = fname
+				lnCell.innerHTML = lname
+				
+				opCell.appendChild(editLink)
+				opCell.appendChild(sep)
+				opCell.appendChild(delLink)
+				
+				
+				person.appendChild(fnCell)
+				person.appendChild(lnCell)
+				person.appendChild(opCell)
+				
+				document.getElementById("tbl").appendChild(person)
+			}
+			
+			function delPerson(person){
+				var tbl = document.getElementById("tbl")
+				
+				tbl.removeChild(person)
+			}
+		</script>
+		
+	</head>
+		<!--  -->
+	<body>
+		First Name: <input type="text" id="txt1"><br><br>
+		Last Name: <input type="text" id="txt2"><br><br>
+		
+		<input type="button" value="Add" class="btn btn-primary" onclick="add_person()">
+		<table id="tbl" align="center" border="2" style="width: 600px;">
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Operations</th>
+			</tr>
+		</table>
+	</body>
+</html>

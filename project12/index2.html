@@ -1,0 +1,58 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<style>
+			img{
+				width: 600px;
+				height: 400px;
+				display: none;
+			}
+			#slides img:first-child{
+				display: block;
+			}
+		</style>
+		
+		<script>
+			var index = 0;
+			setInterval(function(){slider()},4000)
+			setInterval(function(){fade()}, 100)
+
+			
+			function slider(){
+				var slides = document.getElementById("slides").getElementsByTagName("img")
+				
+				index++
+				
+				if(index == slides.length){
+					index = 0
+				}
+				
+				if(index == 0){
+					slides[slides.length - 1].style.display = "none"
+				}else{
+					slides[index-1].style.display = "none"
+				}
+				slides[index].style.display = "block"
+				
+			}
+			
+			function fade(){
+				var slides = document.getElementById("slides").getElementsByTagName("img")
+				var opacity = slides[index].style.opacity > 0 ? slides[index].style.opacity : 1 
+				slides[index].style.opacity = opacity - 0.025
+			}
+		</script>
+		
+	</head>
+		
+	<body>
+		<div id="slides">
+			<img src="f35.png"><!--0-->
+			<img src="wf.png"><!--1-->
+			<img src="ps5.png"><!--2-->
+			<img src="fe.png"><!--3-->
+		</div>
+	</body>
+</html>

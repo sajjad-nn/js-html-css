@@ -1,0 +1,148 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="..\project9\bootstrap\css\bootstrap.min.css">
+		<style>
+			body{
+				margin: 10px;
+			}
+			tr{
+				text-align: center
+			}
+			a{
+				text-decoration: none;
+			}
+		</style>
+		
+		<script>
+			var selectedPerson;
+			function add_person(){
+				var fname = document.getElementById("txt1").value
+				var lname = document.getElementById("txt2").value
+				
+				if(btn.value == "Add"){
+					var person = document.createElement("tr")
+					var chkCell = document.createElement("td")
+					var fnCell = document.createElement("td")
+					var lnCell = document.createElement("td")
+					var opCell = document.createElement("td")
+					
+					
+					var editLink = document.createElement("a") // <a></a>
+					editLink.innerHTML = "Update"
+					editLink.href = "#"
+					editLink.onclick = function(){editPerson(person)}
+					
+					var sep = document.createTextNode(" | ")
+					
+					var delLink = document.createElement("a") // <a></a>
+					delLink.innerHTML = "Delete"
+					delLink.href = "#"
+					delLink.onclick = function(){delPerson(person)} // <a href="#" onclick=""></a>
+					
+					fnCell.innerHTML = fname
+					lnCell.innerHTML = lname
+					chkCell.innerHTML = "<input type='checkbox' onclick='chkClick(this)'>"
+					
+					opCell.appendChild(editLink)
+					opCell.appendChild(sep)
+					opCell.appendChild(delLink)
+					
+					
+					person.appendChild(chkCell)
+					person.appendChild(fnCell)
+					person.appendChild(lnCell)
+					person.appendChild(opCell)
+					
+					document.getElementById("tbl").appendChild(person)
+				}else if(btn.value == "Modify"){
+					selectedPerson.childNodes[0].innerHTML = fname
+					selectedPerson.childNodes[1].innerHTML = lname
+					selectedPerson.style.background = "white"
+					document.getElementById("btn").value = "Add"
+				}
+					
+			}
+			
+			function delPerson(person){
+				var tbl = document.getElementById("tbl")
+				
+				tbl.removeChild(person)
+			}
+			
+			function editPerson(person){
+				selectedPerson = person
+				person.style.backgroundColor = "orange"
+				document.getElementById("txt1").value = person.childNodes[0].innerHTML // <tr><td></td><td></td></tr>
+				document.getElementById("txt2").value = person.childNodes[1].innerHTML // <tr><td></td><td></td></tr>
+				document.getElementById("btn").value = "Modify"
+			}
+			
+			function chkAll(chkAll){
+				var table = document.getElementById("tbl")
+				
+				if(chkAll.checked){
+					for(var i=1; i<table.childNodes.length;++i){
+						table.childNodes[i].childNodes[0].childNodes[0].checked = "checked"
+					}
+				}else{
+					for(var i=1; i<table.childNodes.length;++i){
+						table.childNodes[i].childNodes[0].childNodes[0].checked = ""
+					}
+				}
+			}
+			
+			function chkClick(chk){
+				var table = document.getElementById("tbl")
+				
+				if(!chk.checked){
+					document.getElementById("chkAll").checked = ""	
+				}else{
+					for(var i = 1;i<table.childNodes.length;++i)
+					{
+						if(table.childNodes[i].childNodes[0].childNodes[0].checked){
+							continue
+						}else{
+							break;
+						}
+					}
+					if(i == table.childNodes.length){
+						document.getElementById("chkAll").checked = "checked"
+					}
+				}
+			}
+			
+			
+			function delete_person(){
+				var table = document.getElementById("tbl")
+				var inputs = document.getElementsByTagName("input")
+				
+				for(var i=1;i<inputs.length;){
+					if(inputs[i].checked){
+						table.removeChild(inputs[i].parentNode.parentNode)
+					}else{
+						++i
+					}
+				}
+			}
+		</script>
+		
+	</head>
+		<!--  -->
+	<body>
+		First Name: <input type="text" id="txt1"><br><br>
+		Last Name: <input type="text" id="txt2"><br><br>
+		
+		<input type="button" id="btn" value="Add" class="btn btn-primary" onclick="add_person()">
+		<input type="button" value="Delete" class="btn btn-danger" onclick="delete_person()">
+		<table id="tbl" align="center" border="2" style="width: 600px;">
+			<tr>
+				<th><input type="checkbox" id="chkAll" onclick="chkAll(this)"></th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Operations</th>
+			</tr>
+		</table>
+	</body>
+</html>

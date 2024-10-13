@@ -1,0 +1,43 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			
+		</style>
+		
+		<script>
+		
+			/*var w = window.innerWidth || document.ducumentElement.clientWidth || document.body.clientWidth
+			alert(w)*/
+			alert(window.navigator.media)
+			
+			var tab
+			function openTab(){
+				tab = window.open("","","_blank")
+			}
+			function closeTab(){
+				tab.close()
+			}
+			function moveTab(){
+				tab.moveTo(600, 400)
+				tab.focus()
+			}
+			
+			function resizeTab(){
+				tab.resizeTo(800, 200)
+				tab.focus()
+			}
+			
+		</script>
+		
+	</head>
+		
+	<body>
+		<div id="d1">Hello</div>
+		<input type="button" onclick ="openTab()" value="OPEN">
+		<input type="button" onclick ="closeTab()" value="Close">
+		<input type="button" onclick ="moveTab()" value="Move">
+		<input type="button" onclick ="resizeTab()" value="resize">
+	</body>
+</html>

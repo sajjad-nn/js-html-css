@@ -1,0 +1,28 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			
+		</style>
+		<script>
+			// 0 1 1 2 3 5 8 13 21 34 55 ...
+			function fibo(){
+				var f = new Array()
+				var n = document.getElementById("txt1").value
+				f[1] = 0
+				f[2] = 1
+				
+				for(var i = 3; i<=n;++i){ // f[2] = f[0] + f[1]
+					f[i] = f[i-1] + f[i-2]
+				}
+				alert(f[n])
+			}
+		</script>
+	</head>
+		<!--  -->
+	<body>
+		N: <input type="text" id="txt1">
+		<input type="button" value="Fibo" onclick="fibo()">
+	</body>
+</html>

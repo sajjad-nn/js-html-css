@@ -1,0 +1,79 @@
+ <html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+		<style>
+			#container{
+				width: 100%;
+				height: 100%;
+			}
+			ul{
+				
+				list-style: none;
+				width: 200px;
+				margin: 0px;
+				padding: 0px;
+				text-align: center;
+				position: absolute;
+			}
+			ul li{
+				background: gray;
+				color: white;
+				padding-top: 10px;
+				padding-top: 5px;
+				border-bottom: 2px solid black;
+			}
+			ul li:hover{
+				background: pink;
+				color: black;
+				cursor: pointer;
+			}
+		</style>
+		
+		<script>
+			var state = false;
+			var w
+			function my_menu(e){
+				e.preventDefault()
+				state = true;
+				var menu = document.getElementById("menu")
+				menu.style.display = "block"
+				menu.style.left = e.clientX
+				menu.style.top = e.clientY
+			}
+			function hide_menu(){
+				var menu = document.getElementById("menu")
+				menu.style.display = "none"
+			}
+			function print_page(){
+				hide_menu()
+				window.print()
+			}
+			
+			function operatKeydown(e){
+				if(state == true){
+					//alert(e.keyCode)
+					switch(e.keyCode){
+						case 78: w = window.open();break;
+						case 67: w.close();break;
+						case 80: print_page();break;
+						case 69: hide_menu();break;
+					}
+				}
+					//alert(e.keyCode) // 78 67 80 69
+			}
+		</script>
+		
+	</head>
+		
+	<body onclick="hide_menu()" onkeydown="operatKeydown(event)">
+		<ul id="menu1">
+			<li onclick="w=window.open()">Open <u>N</u>ew Tab</li>
+			<li onclick="w.close()"><u>C</u>lose</li>
+			<li onclick="print_page()"><u>P</u>rint</li>
+			<li onclick="hide_menu()"><u>E</u>xit</li>
+		</ul>
+		<div id="container"  oncontextmenu="my_menu(event)"></div>
+	</body>
+</html>

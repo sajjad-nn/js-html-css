@@ -1,0 +1,66 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			#d1{
+				width: 300px;
+				height: 300px;
+				background: orange;
+			}
+			#img1{
+				width: 600px;
+				height: 500px;
+			}
+		</style>
+		
+		<script>
+			function change(){
+				//document.getElementById("d1").innerHTML = "HELLO"
+				var parameter = document.getElementById("d1").getElementsByTagName("p")
+				//alert(parameter[1].innerHTML)
+				
+				for(var i = 0; i< parameter.length;++i){
+					parameter[i].innerHTML = i
+					parameter[i].style.color = "blue"
+					parameter[i].style.backgroundColor = "yellow"
+					parameter[i].style.borderStyle = "solid"
+					parameter[i].style.borderColor = "red"
+					parameter[i].style.borderWidth = "2px"
+				}
+			}
+			
+			var state = true;
+			function changeImg(btn){
+				if(btn.value == "Change Image (IRAN)"){
+					document.getElementById("img1").src="../images/IRAN.png"
+					btn.value = "Change Image (BIRD)"
+				}else if(btn.value == "Change Image (BIRD)"){
+					document.getElementById("img1").src="../images/1.png"
+					btn.value = "Change Image (IRAN)"
+				}
+					
+			}
+			
+			function childs(){
+				//document.getElementById("d1").childNodes[1].innerHTML ="<a href='#'>Link 1</a>"
+				alert(document.getElementById("d1").firstChild.nextSibling.innerHTML)
+			}
+		</script>
+	</head>
+		
+	<body>
+		<input type="button" value="Click Me" onclick="change()">
+		<input type="button" value="Childs" onclick="childs()">
+		
+		<!-- <input type="button" value="Change Image (IRAN)" onclick="changeImg(this)"><br><br> -->
+		
+		<!-- <img id="img1" src="../images/1.png" alt="" title=""> -->
+		
+		<div id="d1">afw
+			<p>HTML</p>
+			<p>CSS</p>
+			<p>JS</p>
+		</div>
+	</body>
+</html>

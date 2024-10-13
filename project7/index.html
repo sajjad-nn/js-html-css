@@ -1,0 +1,39 @@
+<html >
+	<head>
+		<title>Gilar</title>
+		<meta charset="UTF-8">
+		<style>
+			#d1{
+				background: pink;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script>
+			
+			try{
+				aalert("HELLO")
+			}catch(e1){
+				alert(e1.message + " سیستم پاسخگو نیست! ")
+			}
+			
+			function change(){
+				alert()
+			}
+			
+			function d_contextmenu(e){
+				e.preventDefault();
+			}
+			function txt_keydown(e){
+				if(e.keyCode == 65){
+					e.preventDefault()
+				}
+			}
+		</script>
+	</head>
+		<!--  -->
+	<body ondblclick="change()" onmouse>
+		First Name: <input type="text" id="txt" onkeydown="txt_keydown(event)">
+		<div id="d1" oncontextmenu="d_contextmenu(event)"></div>
+	</body>
+</html>
